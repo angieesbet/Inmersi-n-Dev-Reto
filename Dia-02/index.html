@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos Mensuales</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="img-container">
+                <img src="./assets/img/titulo.png" />
+            </div>
+            <div class="form-group">
+                <input type="text" id="nombreGasto" placeholder="Nombre del gasto">
+                <input type="number" id="valorGasto" placeholder="Valor del gasto" min="0" step="0.01">
+                <input type="text" id="descripcionGasto" placeholder="Descripción del gasto">
+                <button id="botonFormulario" onclick="clickBoton();">Agregar Gasto</button>
+                <button id="botonEliminarGastos" onclick="eliminarTodosLosGastos();">Eliminar Todos los Gastos</button>
+                <!-- Nuevo botón -->
+            </div>
+            <div id="alertModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="cerrarModal();">&times;</span>
+                    <p>¡Atención! Has registrado un gasto mayor a 150 dólares.</p>
+                </div>
+            </div>
+            <ul id="listaDeGastos"></ul>
+            <div class="total">
+                Total Mensual: US$ <span id="totalGastos">0.00</span>
+            </div>
+            <!-- Modal para confirmar eliminación de todos los gastos -->
+            <div id="confirmModal" class="modal">
+                <div class="modal-content">
+                    <p>¿Estás seguro de que deseas eliminar todos los gastos?</p>
+                    <button onclick="confirmarEliminar()">Sí</button>
+                    <button onclick="cerrarConfirmModal()">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
